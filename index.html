@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- Talar om för webbläsaren att det här är ett HTML5-dokument -->
+<html lang="sv">
+<!-- lang="sv" hjälper skärmläsare och sökmotorer förstå att sidan är på svenska -->
+
+<head>
+  <!-- <head> innehåller metadata – information om sidan som inte syns direkt -->
+  <meta charset="UTF-8" />
+  <!-- UTF-8 gör att svenska tecken (å, ä, ö) visas korrekt -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Gör att sidan ser bra ut på mobil – utan detta zoomar mobilen ut och gör texten jätteliten -->
+
+  <title>Git-workshop</title>
+  <!-- Texten som syns i webbläsarens flik -->
+
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Kopplar in vår CSS-fil som styr utseendet på sidan -->
+</head>
+
+<body>
+  <!-- <body> innehåller allt som faktiskt syns på sidan -->
+
+  <!-- ── HEADER: sidans huvud med titel och beskrivning ───────────── -->
+  <header>
+    <!-- <header> är ett semantiskt element – det berättar att det här är "toppen" av sidan -->
+    <div class="badge">Git-workshop</div>
+    <!-- En liten etikett/chip ovanför rubriken, stylas med CSS-klassen "badge" -->
+
+    <h1>Öva Git och GitHub tillsammans</h1>
+    <!-- <h1> är den viktigaste rubriken – det ska bara finnas en per sida -->
+
+    <p>En enkel interaktiv sida för att hålla koll på steg, uppgifter och git-övningar.</p>
+    <!-- <p> är ett stycke med brödtext -->
+  </header>
+
+  <!-- ── MAIN: sidans huvudinnehåll ───────────────────────────────── -->
+  <main>
+    <!-- <main> talar om att det här är sidans primära innehåll (inte header/footer) -->
+
+    <!-- Sektion 1: Introduktion -->
+    <section class="intro">
+      <!-- <section> grupperar ihop relaterat innehåll. class="intro" används av CSS för styling -->
+      <h2>Vad vi gör</h2>
+      <!-- <h2> är en underrubrik, ett steg lägre i hierarkin än <h1> -->
+
+      <p>Vi bygger en liten webbsida i JavaScript och CSS, och övar på att:</p>
+
+      <ul>
+        <!-- <ul> = unordered list, en punktlista utan numrering -->
+        <li>klona ett repo</li>
+        <li>göra ändringar i kod</li>
+        <li>commit:a och pusha till GitHub</li>
+        <li>skapa och arbeta i branches</li>
+        <!-- <li> = list item, ett enskilt listobjekt -->
+      </ul>
+    </section>
+
+    <!-- Sektion 2: Övningar -->
+    <section class="exercise">
+      <h2>Workshop-övningar</h2>
+
+      <ol>
+        <!-- <ol> = ordered list, en numrerad lista – bra när ordning spelar roll -->
+        <li>Skapa en ny branch med ett pedagogiskt namn.</li>
+        <li>Lägg till en text eller ändring i filerna.</li>
+        <li>Commit:a med tydligt meddelande.</li>
+        <li>Pusha till GitHub och skapa en pull request.</li>
+        <li>Granska varandras PR:er och mergea tillsammans.</li>
+      </ol>
+    </section>
+
+    <!-- Sektion 3: Interaktiv logg (styrs av script.js) -->
+    <section class="interactive">
+      <h2>Interaktiv logg</h2>
+      <p>Använd fältet nedan för att skriva vad du gjorde i git och se det i en enkel logg. Det kommer dock att försvinna då vi laddar om sidan.</p>
+
+      <div class="form-row">
+        <!-- <div> är en generisk behållare utan semantisk betydelse, används för layout -->
+
+        <input
+          id="log-input"
+          type="text"
+          placeholder="Skriv en commit-meddelande, t.ex. 'lägger till knapp'"
+        />
+        <!-- id="log-input" gör att JavaScript kan hitta just det här elementet -->
+        <!-- placeholder visas som ledtext när fältet är tomt -->
+
+        <button id="log-button">Spara notis</button>
+        <!-- id="log-button" används av JavaScript för att lyssna på klick -->
+      </div>
+
+      <div id="workshop-log" class="log">
+        <!-- Här lägger JavaScript till nya poster dynamiskt när man sparar -->
+        <p class="log-empty">Här kommer dina anteckningar att hamna.</p>
+      </div>
+    </section>
+
+    <!-- Sektion 4: Tips -->
+    <section class="tips">
+      <h2>Tips!
+      </h2>
+      <ul>
+        <li>Arbeta i par eller små grupper så ni kan diskutera varje steg.</li>
+        <li>Gör små, tydliga commits och skriv vad ändringen gjorde.</li>
+        <li>Använd branches för varje övning så ni kan experimentera utan att påverka main.</li>
+        <li>Be någon annan reviewa din pull request innan merge.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ── FOOTER: sidfoten ──────────────────────────────────────────── -->
+  <footer>
+    <p>Öppna <strong>INSTRUKTIONER.md</strong> för praktiska git-övningar och steg-för-steg-guide.</p>
+    <!-- <strong> gör texten fetstil och markerar att den är viktig -->
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Scriptet läses in sist i <body> så att HTML-elementen ovan hinner skapas
+       innan JavaScript försöker hitta dem -->
+</body>
+</html>
