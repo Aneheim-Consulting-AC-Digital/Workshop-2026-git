@@ -249,3 +249,11 @@ footer {
   padding: 1.5rem;
   border-top: 1px solid var(--border);  /* En diskret avgränsningslinje */
 }
+
+#hacker-message {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+}
