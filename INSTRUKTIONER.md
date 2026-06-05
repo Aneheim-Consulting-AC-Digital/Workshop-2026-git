@@ -1,6 +1,6 @@
 # Git-workshop: Instruktioner
 
-Det här är ett enkelt arbetsområde för att öva Git och GitHub tillsammans.
+En övning för att öva Git och GitHub tillsammans.
 
 ## Vad ingår
 - `index.html` — enkel webbsida med övningsformat
